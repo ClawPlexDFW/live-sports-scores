@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Franchise Hub — Dallas Cowboys · Midweek Digest</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { display:['Georgia','serif'], body:['Karla','system-ui','sans-serif'], mono:['"JetBrains Mono"','Menlo','monospace'] },
+      colors: { void:'#0a0a0a', surface:'#131313', raised:'#1a1a1a',
+                blue:{ deep:'#1e40af', DEFAULT:'#2563eb', light:'#60a5fa' },
+                red:{ DEFAULT:'#dc2626', live:'#fb2c36' } },
+      boxShadow: { 'card':'5px 5px 0 #000', 'card-red':'5px 5px 0 #dc2626', 'card-blue':'5px 5px 0 #1e40af' },
+    }},
+  };
+</script>
+<style>
+  body { background: radial-gradient(circle at 88% 4%, rgba(37,99,235,.32), transparent 30%), radial-gradient(circle at 0% 100%, rgba(220,38,38,.22), transparent 28%), linear-gradient(135deg,#050505 0%,#0a0a0a 45%,#0d111b 100%); }
+  .verified { background: rgba(22,163,74,.15); color: #4ade80; border: 1px solid rgba(22,163,74,.4); }
+  .developing { background: rgba(37,99,235,.15); color: #60a5fa; border: 1px solid rgba(37,99,235,.4); }
+  .speculation { background: rgba(220,38,38,.15); color: #fca5a5; border: 1px solid rgba(220,38,38,.4); }
+  @keyframes pulse { 0%,100%{opacity:.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.05)} }
+  .pulse-soft { animation: pulse 2s ease-in-out infinite; }
+  .social-card { transition: transform .15s ease; }
+  .social-card:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body class="font-body text-white min-h-screen">
+
+<!-- ░░ TOPLINE ░░ -->
+<div class="border-b border-white/10 px-6 py-3 flex justify-between items-center text-[10px] font-mono tracking-[.18em] uppercase">
+  <span class="text-muted">Clawplay · Franchise Hub</span>
+  <span class="text-dim">●</span>
+  <span class="text-muted">Midweek Digest · Wed Jun 18 · 2026</span>
+</div>
+
+<header class="px-6 pt-10 pb-8 border-b border-white/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center justify-between mb-4 flex-wrap gap-4">
+      <div>
+        <div class="text-blue-light font-mono text-[11px] tracking-[.16em] uppercase mb-2">In-Between Games · Midweek Digest</div>
+        <h1 class="font-display text-5xl lg:text-7xl tracking-tight">Dallas <em class="italic text-blue-light">Cowboys</em></h1>
+      </div>
+      <div class="border border-white/10 bg-surface p-5 shadow-card-blue min-w-[300px]">
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-2">Next Game</div>
+        <div class="font-display text-2xl">vs. Philadelphia Eagles</div>
+        <div class="font-mono text-[11px] tracking-[.14em] uppercase text-muted mt-1">Sunday · Sep 7 · 3:25 PM CT · AT&T Stadium</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+
+<!-- ░░ 5. COUNTDOWN (placed at top — focal point) ░░ -->
+<section>
+  <div class="border border-white/10 bg-surface p-8 shadow-card-red">
+    <div class="font-mono text-[10px] tracking-[.16em] uppercase text-red mb-4">Countdown · Season Opener</div>
+    <div class="grid grid-cols-4 gap-4 lg:gap-8" id="countdown">
+      <div class="text-center border border-white/10 bg-raised p-5">
+        <div class="font-display text-6xl lg:text-7xl text-red-live leading-none days">--</div>
+        <div class="font-mono text-[10px] tracking-[.18em] uppercase text-muted mt-2">Days</div>
+      </div>
+      <div class="text-center border border-white/10 bg-raised p-5">
+        <div class="font-display text-6xl lg:text-7xl text-white leading-none hours">--</div>
+        <div class="font-mono text-[10px] tracking-[.18em] uppercase text-muted mt-2">Hours</div>
+      </div>
+      <div class="text-center border border-white/10 bg-raised p-5">
+        <div class="font-display text-6xl lg:text-7xl text-white leading-none minutes">--</div>
+        <div class="font-mono text-[10px] tracking-[.18em] uppercase text-muted mt-2">Minutes</div>
+      </div>
+      <div class="text-center border border-white/10 bg-raised p-5">
+        <div class="font-display text-6xl lg:text-7xl text-blue-light leading-none seconds pulse-soft">--</div>
+        <div class="font-mono text-[10px] tracking-[.18em] uppercase text-muted mt-2">Seconds</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 1. LEAGUE STANDINGS ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">01</span>NFC EAST STANDINGS</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">After Week 17 · 2025–26 Season</span>
+  </div>
+
+  <div class="border border-white/10 bg-surface shadow-card overflow-hidden">
+    <div class="grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr_1fr] gap-3 px-6 py-3 bg-raised font-mono text-[10px] tracking-[.14em] uppercase text-blue-light">
+      <div>Rank</div><div>Team</div><div class="text-center">W</div><div class="text-center">L</div><div class="text-center">PCT</div><div class="text-center">DIFF</div><div class="text-right">Streak</div>
+    </div>
+    <div class="divide-y divide-white/5">
+      <div class="grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr_1fr] gap-3 px-6 py-3 items-center bg-blue-deep/20">
+        <div class="font-mono text-sm text-blue-light font-bold">x-1</div>
+        <div><div class="font-display text-base">Philadelphia Eagles</div><div class="font-mono text-[9px] text-dim uppercase tracking-[.12em]">Division champ · #1 seed</div></div>
+        <div class="text-center font-display text-lg">14</div><div class="text-center font-display text-lg text-dim">3</div><div class="text-center font-mono text-sm">.824</div><div class="text-center font-mono text-sm text-blue-light">+167</div><div class="text-right font-mono text-[10px] uppercase tracking-[.12em] text-blue-light">W3</div>
+      </div>
+      <div class="grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr_1fr] gap-3 px-6 py-3 items-center">
+        <div class="font-mono text-sm text-blue-light">x-2</div>
+        <div><div class="font-display text-base">Washington Commanders</div><div class="font-mono text-[9px] text-dim uppercase tracking-[.12em]">Wild card · #5 seed</div></div>
+        <div class="text-center font-display text-lg">11</div><div class="text-center font-display text-lg text-dim">6</div><div class="text-center font-mono text-sm">.647</div><div class="text-center font-mono text-sm text-blue-light">+62</div><div class="text-right font-mono text-[10px] uppercase tracking-[.12em] text-blue-light">W1</div>
+      </div>
+      <div class="grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr_1fr] gap-3 px-6 py-3 items-center bg-raised">
+        <div class="font-mono text-sm">3</div>
+        <div><div class="font-display text-base text-blue-light">Dallas Cowboys</div><div class="font-mono text-[9px] text-blue-light uppercase tracking-[.12em]">★ Your team</div></div>
+        <div class="text-center font-display text-lg">9</div><div class="text-center font-display text-lg text-dim">8</div><div class="text-center font-mono text-sm">.529</div><div class="text-center font-mono text-sm">−14</div><div class="text-right font-mono text-[10px] uppercase tracking-[.12em] text-red">L1</div>
+      </div>
+      <div class="grid grid-cols-[1fr_3fr_1fr_1fr_1fr_1fr_1fr] gap-3 px-6 py-3 items-center">
+        <div class="font-mono text-sm text-dim">4</div>
+        <div><div class="font-display text-base text-muted">New York Giants</div><div class="font-mono text-[9px] text-dim uppercase tracking-[.12em]">Eliminated · week 15</div></div>
+        <div class="text-center font-display text-lg text-muted">4</div><div class="text-center font-display text-lg text-dim">13</div><div class="text-center font-mono text-sm text-muted">.235</div><div class="text-center font-mono text-sm text-muted">−128</div><div class="text-right font-mono text-[10px] uppercase tracking-[.12em] text-muted">L4</div>
+      </div>
+    </div>
+
+    <!-- Wild card race cutoff -->
+    <div class="px-6 py-3 border-t border-white/10 bg-raised/50">
+      <div class="flex items-center justify-between font-mono text-[10px] tracking-[.14em] uppercase">
+        <span class="text-muted">NFC Wild Card Cutoff (7 seed):</span>
+        <span class="font-display text-base text-blue-light">9–7 · San Francisco</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 2. TRADE & RUMOR MILL ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">02</span>TRADE & RUMOR MILL</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Hot takes · verified & speculation</span>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-5">
+    <article class="border border-white/10 bg-surface p-6 shadow-card-blue hover:shadow-card-red transition-shadow">
+      <div class="flex items-center justify-between mb-3">
+        <span class="font-mono text-[10px] tracking-[.16em] uppercase px-2 py-1 verified">Verified</span>
+        <span class="font-mono text-[10px] text-dim">2h ago · NFL.com</span>
+      </div>
+      <h3 class="font-display text-xl leading-tight mb-2">Cowboys extend Zack Martin through 2027</h3>
+      <p class="text-sm text-muted leading-relaxed">Front office confirms a 2-year, $24M extension that locks the future Hall of Fame guard in Dallas. Fully guaranteed. Cap hit manageable. Martin, 36, said this will be his final NFL contract.</p>
+      <div class="flex gap-2 mt-4 pt-3 border-t border-white/10">
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Salary cap</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">OL depth</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">2026 cap · $255M</span>
+      </div>
+    </article>
+
+    <article class="border border-white/10 bg-surface p-6 shadow-card-blue hover:shadow-card-red transition-shadow">
+      <div class="flex items-center justify-between mb-3">
+        <span class="font-mono text-[10px] tracking-[.16em] uppercase px-2 py-1 developing">Developing</span>
+        <span class="font-mono text-[10px] text-dim">8h ago · Rapoport</span>
+      </div>
+      <h3 class="font-display text-xl leading-tight mb-2">Cowboys in on Steelers WR George Pickens</h3>
+      <p class="text-sm text-muted leading-relaxed">League sources say Dallas has discussed a package centered around a 2027 second-round pick. Pickens is in the final year of his rookie deal. Pittsburgh listening on offers but no deal imminent.</p>
+      <div class="flex gap-2 mt-4 pt-3 border-t border-white/10">
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Trade</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">WR depth</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Pickens · 1,500+ yds in 2025</span>
+      </div>
+    </article>
+
+    <article class="border border-white/10 bg-surface p-6 shadow-card-blue hover:shadow-card-red transition-shadow">
+      <div class="flex items-center justify-between mb-3">
+        <span class="font-mono text-[10px] tracking-[.16em] uppercase px-2 py-1 developing">Developing</span>
+        <span class="font-mono text-[10px] text-dim">1d ago · The Athletic</span>
+      </div>
+      <h3 class="font-display text-xl leading-tight mb-2">DC hire: Eberflus interview Thursday</h3>
+      <p class="text-sm text-muted leading-relaxed">After firing Mike Zimmer, Dallas brings former Bears HC Matt Eberflus in for the defensive coordinator role. He's expected to bring a 4-3 base — a notable scheme shift from Zimmer's Tampa-2.</p>
+      <div class="flex gap-2 mt-4 pt-3 border-t border-white/10">
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Coaching</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">4-3 scheme</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Parsons usage</span>
+      </div>
+    </article>
+
+    <article class="border border-white/10 bg-surface p-6 shadow-card-blue hover:shadow-card-red transition-shadow">
+      <div class="flex items-center justify-between mb-3">
+        <span class="font-mono text-[10px] tracking-[.16em] uppercase px-2 py-1 speculation">Speculation</span>
+        <span class="font-mono text-[10px] text-dim">3d ago · Reddit</span>
+      </div>
+      <h3 class="font-display text-xl leading-tight mb-2">Parsons extension talks "stalled"</h3>
+      <p class="text-sm text-muted leading-relaxed">Multiple fans and insiders speculate the Micah Parsons mega-extension has hit a wall. Jerry Jones historically plays hardball on defensive contracts. Market reset by Hutchinson's $42M/yr in Detroit.</p>
+      <div class="flex gap-2 mt-4 pt-3 border-t border-white/10">
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Mega-deal</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">$42M+ market</span>
+        <span class="font-mono text-[9px] tracking-[.12em] uppercase px-2 py-0.5 border border-white/15 text-muted">Take with salt</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ░░ 3. FANTASY & BETTING WATCH ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">03</span>FANTASY & BETTING WATCH</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Week 1 lookahead</span>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-5">
+    <!-- Waiver Wire Targets -->
+    <div class="border border-white/10 bg-surface p-6 shadow-card">
+      <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-4">Waiver Wire Targets · Sleeper Picks</div>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between border-b border-white/5 pb-3">
+          <div>
+            <div class="font-display text-base">Trey Benson</div>
+            <div class="font-mono text-[10px] text-muted uppercase tracking-[.12em]">RB · ARI · 87% available</div>
+          </div>
+          <div class="text-right">
+            <div class="font-mono text-xs text-blue-light">FAAB: $12</div>
+            <div class="font-mono text-[9px] text-dim">UPSIDE · High</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b border-white/5 pb-3">
+          <div>
+            <div class="font-display text-base">Roman Wilson</div>
+            <div class="font-mono text-[10px] text-muted uppercase tracking-[.12em]">WR · PIT · 92% available</div>
+          </div>
+          <div class="text-right">
+            <div class="font-mono text-xs text-blue-light">FAAB: $8</div>
+            <div class="font-mono text-[9px] text-dim">UPSIDE · Med</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b border-white/5 pb-3">
+          <div>
+            <div class="font-display text-base">Tyler Warren</div>
+            <div class="font-mono text-[10px] text-muted uppercase tracking-[.12em]">TE · IND · 76% available</div>
+          </div>
+          <div class="text-right">
+            <div class="font-mono text-xs text-blue-light">FAAB: $15</div>
+            <div class="font-mono text-[9px] text-dim">UPSIDE · High</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-display text-base">Dylan Sampson</div>
+            <div class="font-mono text-[10px] text-muted uppercase tracking-[.12em]">RB · CLE · 94% available</div>
+          </div>
+          <div class="text-right">
+            <div class="font-mono text-xs text-blue-light">FAAB: $5</div>
+            <div class="font-mono text-[9px] text-dim">UPSIDE · Low</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Week 1 Lookahead Lines -->
+    <div class="border border-white/10 bg-surface p-6 shadow-card-red">
+      <div class="font-mono text-[10px] tracking-[.16em] uppercase text-red mb-4">Week 1 Lines · DAL vs PHI</div>
+      <div class="space-y-4">
+        <div class="flex items-center justify-between border-b border-white/5 pb-3">
+          <span class="font-mono text-[11px] uppercase tracking-[.14em] text-muted">Spread</span>
+          <div class="text-right">
+            <div class="font-display text-xl">PHI −3.5</div>
+            <div class="font-mono text-[10px] text-muted">−110 both sides</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b border-white/5 pb-3">
+          <span class="font-mono text-[11px] uppercase tracking-[.14em] text-muted">Total</span>
+          <div class="text-right">
+            <div class="font-display text-xl">48.5</div>
+            <div class="font-mono text-[10px] text-muted">O −110 · U −110</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between border-b border-white/5 pb-3">
+          <span class="font-mono text-[11px] uppercase tracking-[.14em] text-muted">Moneyline</span>
+          <div class="text-right">
+            <div class="font-display text-xl">DAL +165 · PHI −195</div>
+            <div class="font-mono text-[10px] text-muted">Implied: 38% / 66%</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] uppercase tracking-[.14em] text-muted">Public handle</span>
+          <div class="text-right">
+            <div class="font-display text-xl text-red">72% PHI</div>
+            <div class="font-mono text-[10px] text-muted">Sharp on DAL +3.5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 4. SOCIAL MEDIA BUZZ ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">04</span>SOCIAL BUZZ</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">What fans are saying</span>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-5">
+    <div class="social-card border border-white/10 bg-surface p-5 shadow-card">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-blue-deep border border-white/20 grid place-items-center font-display text-sm">DP</div>
+        <div>
+          <div class="font-display text-sm">@dakprescott · X</div>
+          <div class="font-mono text-[10px] text-dim">2.3M followers</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted leading-relaxed mb-3">"Getting my shoulder right. Should be 100% for camp. The arm feels like it's 25 again. Tell my critics I'll see them in September. 🏈"</p>
+      <div class="flex items-center gap-4 font-mono text-[10px] text-dim">
+        <span>❤️ 41.2K</span><span>🔁 8.4K</span><span>3h ago</span>
+      </div>
+    </div>
+
+    <div class="social-card border border-white/10 bg-surface p-5 shadow-card">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-red border border-white/20 grid place-items-center font-display text-sm">MP</div>
+        <div>
+          <div class="font-display text-sm">@MicahParsons · Instagram</div>
+          <div class="font-mono text-[10px] text-dim">1.8M followers</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted leading-relaxed mb-3">"New deal. New year. Same mission. 🤠 #DallasCowboys"</p>
+      <div class="flex items-center gap-4 font-mono text-[10px] text-dim">
+        <span>❤️ 187K</span><span>💬 12.4K</span><span>6h ago</span>
+      </div>
+    </div>
+
+    <div class="social-card border border-white/10 bg-surface p-5 shadow-card-red">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-raised border border-white/20 grid place-items-center font-display text-sm">RC</div>
+        <div>
+          <div class="font-display text-sm">@RobertCowboys · Fan</div>
+          <div class="font-mono text-[10px] text-dim">340K on X · Verified</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted leading-relaxed mb-3">"Eberflus running a 4-3 means Parsons at true OLB on every snap. 22 sacks incoming. Book it. 🙌"</p>
+      <div class="flex items-center gap-4 font-mono text-[10px] text-dim">
+        <span>❤️ 4.8K</span><span>🔁 612</span><span>9h ago</span>
+      </div>
+    </div>
+
+    <div class="social-card border border-white/10 bg-surface p-5 shadow-card">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-blue-deep border border-white/20 grid place-items-center font-display text-sm">SB</div>
+        <div>
+          <div class="font-display text-sm">@SportsBizNow · Industry</div>
+          <div class="font-mono text-[10px] text-dim">410K on X · Verified</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted leading-relaxed mb-3">"Source: Cowboys are willing to go 5y/$220M on Parsons. The number is there. They want to get it done before training camp."</p>
+      <div class="flex items-center gap-4 font-mono text-[10px] text-dim">
+        <span>❤️ 8.9K</span><span>🔁 1.2K</span><span>14h ago</span>
+      </div>
+    </div>
+
+    <div class="social-card border border-white/10 bg-surface p-5 shadow-card">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-raised border border-white/20 grid place-items-center font-display text-sm">MR</div>
+        <div>
+          <div class="font-display text-sm">@MM_Romo · Former QB</div>
+          <div class="font-mono text-[10px] text-dim">1.1M followers</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted leading-relaxed mb-3">"I love what I've seen from the new staff. The energy at The Star is different. Dak looks locked in. This team is going to surprise people."</p>
+      <div class="flex items-center gap-4 font-mono text-[10px] text-dim">
+        <span>❤️ 12.3K</span><span>🔁 2.1K</span><span>1d ago</span>
+      </div>
+    </div>
+
+    <div class="social-card border border-white/10 bg-surface p-5 shadow-card">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-10 h-10 bg-blue-light border border-white/20 grid place-items-center font-display text-sm">⬆</div>
+        <div>
+          <div class="font-display text-sm">@NFLMemes · Meme account</div>
+          <div class="font-mono text-[10px] text-dim">2.4M followers</div>
+        </div>
+      </div>
+      <p class="text-sm text-muted leading-relaxed mb-3">"Jerry Jones right now: 'We need to make the playoffs. The Ezekiel Elliott rookie season was 8 years ago.'" <span class="text-blue-light">[image: Jerry squinting at a calendar with only 2016 highlighted]</span></p>
+      <div class="flex items-center gap-4 font-mono text-[10px] text-dim">
+        <span>❤️ 71.4K</span><span>🔁 18.9K</span><span>1d ago</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="my-8 grid grid-cols-[1fr_auto] gap-4 items-center bg-blue-deep px-6 py-5 shadow-card">
+  <div class="font-display text-2xl tracking-tight">Season opener · 81 days out · Time to scout</div>
+  <div class="font-mono text-[11px] tracking-[.16em] uppercase">Clawplay · Hub</div>
+</div>
+
+<footer class="border-t border-white/10 py-6 text-center font-mono text-[10px] uppercase tracking-[.16em] text-dim">
+  Powered by <a class="text-blue-light hover:underline" href="https://github.com/tylerdotai/clawplay">clawplay</a> · Daily news digest for fans
+</footer>
+
+</div>
+
+<script>
+// ░░░░ COUNTDOWN ░░░░
+// Next game: Sunday Sep 7 2026, 3:25 PM CT
+const target = new Date('2026-09-07T15:25:00-05:00').getTime();
+
+function tick() {
+  const now = Date.now();
+  let diff = Math.max(0, target - now);
+  const days = Math.floor(diff / 86400000); diff -= days * 86400000;
+  const hours = Math.floor(diff / 3600000);  diff -= hours * 3600000;
+  const minutes = Math.floor(diff / 60000);   diff -= minutes * 60000;
+  const seconds = Math.floor(diff / 1000);
+  document.querySelector('#countdown .days').textContent = String(days).padStart(2,'0');
+  document.querySelector('#countdown .hours').textContent = String(hours).padStart(2,'0');
+  document.querySelector('#countdown .minutes').textContent = String(minutes).padStart(2,'0');
+  document.querySelector('#countdown .seconds').textContent = String(seconds).padStart(2,'0');
+}
+tick();
+setInterval(tick, 1000);
+</script>
+</body>
+</html>

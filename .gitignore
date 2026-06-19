@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+ENV/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Build artifacts
+*.spec
+
+# Generated reports (kept in repo only as curated examples)
+match_report_*.html
+clawplay_match_*.html
+clawplay_*_*.html
+!examples/
+
+# OS
+Thumbs.db

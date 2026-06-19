@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "clawplay"
+version = "1.0.0"
+description = "Sports aggregator with handout-quality HTML reports — previews, recaps, live scoreboards for 20+ sports."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Tyler Delano", email = "tyler@clawplex.dev" },
+]
+keywords = ["sports", "live-scores", "scoreboard", "scraper", "playwright", "headless-browser", "html-report", "aggregator"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+    "Topic :: Internet :: WWW/HTTP :: Browsing",
+]
+dependencies = [
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "ruff>=0.1",
+    "playwright>=1.40",
+    "fastapi>=0.100",
+    "uvicorn>=0.23",
+    "pyyaml>=6.0",
+]
+server = [
+    "playwright>=1.40",
+    "fastapi>=0.100",
+    "uvicorn>=0.23",
+]
+
+[project.urls]
+Homepage = "https://github.com/tylerdotai/clawplay"
+Repository = "https://github.com/tylerdotai/clawplay"
+Issues = "https://github.com/tylerdotai/clawplay/issues"
+
+[project.scripts]
+clawplay-report = "clawplay.report:_cli_entry"
+clawplay-match  = "clawplay.match_report:_cli_entry"
+clawplay-live   = "clawplay.live_scores:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"clawplay" = ["py.typed"]
+
+[tool.black]
+line-length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "UP", "SIM"]
+# UP045 (Optional[X] → X | None) and UP035 (typing.List → list) require Python 3.9+ builtin generics,
+# which we support. We keep the explicit typing imports for clarity and 3.9 compatibility.
+ignore = ["E501", "UP045", "UP006", "UP007", "UP035"]  # line-length handled by formatter; PEP 604 syntax not allowed
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-q --tb=short"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["clawplay"]

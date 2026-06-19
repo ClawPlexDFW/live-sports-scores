@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FULL TIME — Mexico 1–0 USA · World Cup Recap</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { display:['Georgia','serif'], body:['Karla','system-ui','sans-serif'], mono:['"JetBrains Mono"','Menlo','monospace'] },
+      colors: { void:'#0a0a0a', surface:'#131313', raised:'#1a1a1a',
+                blue:{ deep:'#1e40af', DEFAULT:'#2563eb', light:'#60a5fa' },
+                red:{ DEFAULT:'#dc2626', live:'#fb2c36' } },
+      boxShadow: { 'card':'5px 5px 0 #000', 'card-red':'5px 5px 0 #dc2626', 'card-blue':'5px 5px 0 #1e40af' },
+    }},
+  };
+</script>
+<style>
+  body { background: radial-gradient(circle at 88% 4%, rgba(37,99,235,.32), transparent 30%), radial-gradient(circle at 0% 100%, rgba(220,38,38,.22), transparent 28%), linear-gradient(135deg,#050505 0%,#0a0a0a 45%,#0d111b 100%); }
+  .stat-bar { transition: width .4s ease; }
+  .tab-active { background: var(--blue-deep, #1e40af); color: white; }
+  .mvp-num { font-feature-settings: 'tnum'; }
+  @keyframes pulse { 0%,100%{opacity:.6} 50%{opacity:1} }
+  .glow { animation: pulse 2.4s ease-in-out infinite; }
+</style>
+</head>
+<body class="font-body text-white min-h-screen">
+
+<!-- ░░ TOPLINE ░░ -->
+<div class="border-b border-white/10 px-6 py-3 flex justify-between items-center text-[10px] font-mono tracking-[.18em] uppercase">
+  <span class="text-muted">Clawplay · Post-Game Recap</span>
+  <span class="text-dim">●</span>
+  <span class="text-muted">FULL TIME · 06.21.2026 · 11:02 PM CT</span>
+</div>
+
+<header class="px-6 pt-12 pb-8 border-b border-white/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-blue-light font-mono text-[11px] tracking-[.16em] uppercase mb-3">FIFA World Cup 2026 · Group C · Matchday 02 · FINAL</div>
+    <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-6 items-center">
+      <div class="text-center lg:text-right">
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-2">Mexico</div>
+        <div class="font-display text-7xl lg:text-8xl text-red-live leading-none">1</div>
+      </div>
+      <div class="text-center">
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-muted mb-2">Full Time</div>
+        <div class="font-display text-3xl text-dim italic">vs</div>
+      </div>
+      <div class="text-center lg:text-left">
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-2">USA</div>
+        <div class="font-display text-7xl lg:text-8xl text-white leading-none">0</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="max-w-6xl mx-auto px-6 py-10 space-y-12">
+
+<!-- ░░ 1. FINAL SCORE & MVP HERO ░░ -->
+<section>
+  <div class="grid lg:grid-cols-[1.4fr_1fr] gap-6">
+    <!-- MVP card -->
+    <div class="border border-white/10 bg-surface p-8 shadow-card-red glow">
+      <div class="font-mono text-[10px] tracking-[.16em] uppercase text-red mb-2">★ Player of the Game</div>
+      <div class="flex items-start gap-5">
+        <div class="w-28 h-28 border-2 border-red-live bg-raised grid place-items-center font-display text-5xl text-red-live">#22</div>
+        <div class="flex-1">
+          <div class="font-mono text-[10px] tracking-[.14em] uppercase text-muted">MEX · RW · 90'</div>
+          <div class="font-display text-4xl mt-1">Hirving "Chucky" Lozano</div>
+          <div class="flex items-center gap-3 mt-2">
+            <span class="font-mono text-[10px] tracking-[.14em] uppercase px-2 py-1 bg-red-live text-white">Match Rating 9.2</span>
+            <span class="font-mono text-[10px] tracking-[.14em] uppercase text-muted">78' GOAL · 1A · 5 DRB</span>
+          </div>
+          <p class="text-sm text-muted mt-4 leading-relaxed">"The goal was a 9 out of 10 finish — receiving with his back to goal, a half-turn to lose Dest, and a curling strike across the keeper into the far corner. The assist to himself on the dribble beforehand was the moment of the tournament so far." — match analyst</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick stats grid -->
+    <div class="border border-white/10 bg-surface p-6 shadow-card">
+      <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-4">Match Snapshot</div>
+      <div class="grid grid-cols-2 gap-3">
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-red-live">1.84</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">MEX xG</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-blue-light">0.52</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">USA xG</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-white">42%</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Possession</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-white">58%</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Possession</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-red-live">12</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Shots · MEX</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-blue-light">9</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">Shots · USA</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-red-live">6</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">SOT · MEX</div></div>
+        <div class="border border-white/10 bg-raised p-4"><div class="font-display text-2xl text-blue-light">2</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted mt-1">SOT · USA</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 2. THE VERDICT (AI SUMMARY) ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">02</span>THE VERDICT</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">AI-generated summary · 3 sentences</span>
+  </div>
+
+  <div class="border border-white/10 bg-gradient-to-b from-raised to-surface p-8 shadow-card">
+    <p class="font-display text-2xl lg:text-3xl leading-tight tracking-tight">
+      <span class="text-red-live">Mexico won the game they wanted to play</span> — direct, vertical, ruthless on the break — and got the goal from the only player in the match capable of producing it from nothing.
+      <span class="text-muted">The US held 58% of the ball but generated 0.52 xG, their lowest output in a competitive match since Gregg Berhalter took over.</span>
+      <span class="text-blue-light">Without Tyler Adams in midfield, the US couldn't progress through the lines, and the three substitutions Berhalter made (Musah → Aaronson, Pulisic → Weah, McKennie → Cardoso) addressed shape, not chance creation.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ░░ 3. ULTIMATE BOX SCORE ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">03</span>THE ULTIMATE BOX SCORE</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Click tabs to switch teams</span>
+  </div>
+
+  <div class="border border-white/10 bg-surface shadow-card overflow-hidden">
+    <div class="flex border-b border-white/10">
+      <button data-tab="mex" class="tab-btn tab-active flex-1 px-6 py-3 font-mono text-[11px] tracking-[.16em] uppercase text-center transition-colors">Mexico · 11 Players</button>
+      <button data-tab="usa" class="tab-btn flex-1 px-6 py-3 font-mono text-[11px] tracking-[.16em] uppercase text-center transition-colors bg-raised text-muted hover:text-white">USA · 11 Players</button>
+    </div>
+
+    <!-- MEX BOX -->
+    <div id="box-mex" class="tab-panel">
+      <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-3 bg-raised font-mono text-[10px] tracking-[.14em] uppercase text-blue-light">
+        <div>Player</div><div class="text-right">MIN</div><div class="text-right">G</div><div class="text-right">A</div><div class="text-right">SHT</div><div class="text-right">PS%</div><div class="text-right">RATING</div>
+      </div>
+      <div class="divide-y divide-white/5 font-body">
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">H. Lozano</div><div class="font-mono text-[10px] text-dim">FW · #22</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm text-red-live font-bold">1</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">3</div><div class="text-right font-mono text-sm">78%</div><div class="text-right font-mono text-sm text-red-live font-bold">9.2</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">A. Vega</div><div class="font-mono text-[10px] text-dim">FW · #10</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">4</div><div class="text-right font-mono text-sm">82%</div><div class="text-right font-mono text-sm">8.1</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">C. Huerta</div><div class="font-mono text-[10px] text-dim">MF · #8</div></div>
+          <div class="text-right font-mono text-sm">73</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">85%</div><div class="text-right font-mono text-sm">7.4</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">E. Álvarez</div><div class="font-mono text-[10px] text-dim">MF · #4</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">91%</div><div class="text-right font-mono text-sm">7.6</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">L. Chávez</div><div class="font-mono text-[10px] text-dim">MF · #16</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">88%</div><div class="text-right font-mono text-sm">7.0</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">M. Sánchez</div><div class="font-mono text-[10px] text-dim">DF · #2</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">86%</div><div class="text-right font-mono text-sm">7.8</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">J. Vásquez</div><div class="font-mono text-[10px] text-dim">DF · #3</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">92%</div><div class="text-right font-mono text-sm">7.5</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">C. Montes</div><div class="font-mono text-[10px] text-dim">DF · #15</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">89%</div><div class="text-right font-mono text-sm">7.2</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">K. Álvarez</div><div class="font-mono text-[10px] text-dim">DF · #5</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">84%</div><div class="text-right font-mono text-sm">7.0</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">G. Ochoa (GK)</div><div class="font-mono text-[10px] text-dim">GK · #13</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">—</div><div class="text-right font-mono text-sm">7.3</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised bg-raised/40">
+          <div><div class="font-display text-sm">J. Antuna</div><div class="font-mono text-[10px] text-dim">SUB · MF · #9</div></div>
+          <div class="text-right font-mono text-sm">17</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">2</div><div class="text-right font-mono text-sm">91%</div><div class="text-right font-mono text-sm">6.8</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USA BOX -->
+    <div id="box-usa" class="tab-panel hidden">
+      <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-3 bg-raised font-mono text-[10px] tracking-[.14em] uppercase text-blue-light">
+        <div>Player</div><div class="text-right">MIN</div><div class="text-right">G</div><div class="text-right">A</div><div class="text-right">SHT</div><div class="text-right">PS%</div><div class="text-right">RATING</div>
+      </div>
+      <div class="divide-y divide-white/5">
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">C. Pulisic</div><div class="font-mono text-[10px] text-dim">FW · #10</div></div>
+          <div class="text-right font-mono text-sm">73</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">2</div><div class="text-right font-mono text-sm">79%</div><div class="text-right font-mono text-sm text-blue-light">7.1</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">G. Reyna</div><div class="font-mono text-[10px] text-dim">MF · #7</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">86%</div><div class="text-right font-mono text-sm">6.9</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">W. McKennie</div><div class="font-mono text-[10px] text-dim">MF · #8</div></div>
+          <div class="text-right font-mono text-sm">67</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">88%</div><div class="text-right font-mono text-sm">6.6</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">Y. Musah</div><div class="font-mono text-[10px] text-dim">MF · #6</div></div>
+          <div class="text-right font-mono text-sm">60</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">92%</div><div class="text-right font-mono text-sm">6.4</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">T. Weah</div><div class="font-mono text-[10px] text-dim">SUB · FW · #21</div></div>
+          <div class="text-right font-mono text-sm">17</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">1</div><div class="text-right font-mono text-sm">75%</div><div class="text-right font-mono text-sm">6.2</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">B. Aaronson</div><div class="font-mono text-[10px] text-dim">SUB · MF · #11</div></div>
+          <div class="text-right font-mono text-sm">30</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">84%</div><div class="text-right font-mono text-sm">6.0</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">A. Robinson</div><div class="font-mono text-[10px] text-dim">DF · #5</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">82%</div><div class="text-right font-mono text-sm">5.9</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">S. Dest</div><div class="font-mono text-[10px] text-dim">DF · #2</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">85%</div><div class="text-right font-mono text-sm">5.7</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">C. Richards</div><div class="font-mono text-[10px] text-dim">DF · #3</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">93%</div><div class="text-right font-mono text-sm">6.7</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">T. Ream</div><div class="font-mono text-[10px] text-dim">DF · #13</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">91%</div><div class="text-right font-mono text-sm">6.8</div>
+        </div>
+        <div class="grid grid-cols-[2fr_1fr_1fr_1fr_1fr_1fr_1fr] gap-2 px-6 py-2.5 hover:bg-raised">
+          <div><div class="font-display text-sm">M. Turner (GK)</div><div class="font-mono text-[10px] text-dim">GK · #1</div></div>
+          <div class="text-right font-mono text-sm">90</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">0</div><div class="text-right font-mono text-sm">—</div><div class="text-right font-mono text-sm">6.5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 4. GAME-CHANGING MOMENTS ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">04</span>GAME-CHANGING MOMENTS</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">3 turning points · Win-probability deltas</span>
+  </div>
+
+  <div class="space-y-5">
+    <!-- Moment 1 -->
+    <div class="border border-white/10 bg-surface shadow-card p-6 grid lg:grid-cols-[1fr_auto] gap-4">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="font-display text-3xl text-blue-light">23'</span>
+          <span class="font-mono text-[10px] tracking-[.14em] uppercase px-2 py-1 bg-blue text-white">KEY SAVE</span>
+        </div>
+        <h3 class="font-display text-xl mb-1">Ochoa denies Pulisic 1v1</h3>
+        <p class="text-sm text-muted leading-relaxed">Pulisic ran the channel, rounded the keeper — and Ochoa recovered in time to smother the shot at the goal line. Win probability dropped from 47% → 39% (USA). The save that kept Mexico in the match.</p>
+      </div>
+      <div class="flex flex-col items-end justify-center">
+        <div class="font-display text-3xl text-red-live">−8%</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.12em] text-muted mt-1">USA WP</div>
+      </div>
+    </div>
+
+    <!-- Moment 2 -->
+    <div class="border border-white/10 bg-surface shadow-card-red p-6 grid lg:grid-cols-[1fr_auto] gap-4">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="font-display text-3xl text-red-live">78'</span>
+          <span class="font-mono text-[10px] tracking-[.14em] uppercase px-2 py-1 bg-red-live text-white">GOAL</span>
+        </div>
+        <h3 class="font-display text-xl mb-1">Lozano's curling strike</h3>
+        <p class="text-sm text-muted leading-relaxed">Half-turn, cut inside from the right, curl across the keeper into the far corner. Genuine world-class finish. Win probability spiked 42% → 68% (MEX) in real time.</p>
+      </div>
+      <div class="flex flex-col items-end justify-center">
+        <div class="font-display text-3xl text-red-live">+26%</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.12em] text-muted mt-1">MEX WP</div>
+      </div>
+    </div>
+
+    <!-- Moment 3 -->
+    <div class="border border-white/10 bg-surface shadow-card p-6 grid lg:grid-cols-[1fr_auto] gap-4">
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          <span class="font-display text-3xl text-blue-light">86'</span>
+          <span class="font-mono text-[10px] tracking-[.14em] uppercase px-2 py-1 bg-blue-deep text-white">RED CARD · DENIED</span>
+        </div>
+        <h3 class="font-display text-xl mb-1">Pulisic penalty shout waved away</h3>
+        <p class="text-sm text-muted leading-relaxed">Pulisic went down under a Vásquez challenge in the box. VAR checked for 90 seconds — no penalty given. VAR check pulled Mexico's WP from 73% to 67% (US briefly rallied). Final 4 minutes were nervy.</p>
+      </div>
+      <div class="flex flex-col items-end justify-center">
+        <div class="font-display text-3xl text-blue-light">−6%</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.12em] text-muted mt-1">MEX WP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 5. FAN POST-GAME VERDICT METER ░░ -->
+<section id="verdict">
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">05</span>FAN VERDICT</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Rate the performance · Saved locally</span>
+  </div>
+
+  <div class="border border-white/10 bg-surface shadow-card p-8 space-y-7">
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="rating-card">
+        <div class="flex items-center justify-between mb-2">
+          <span class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light">Coaching</span>
+          <span class="font-display text-2xl rating-val" id="r-coach-val">7</span>
+        </div>
+        <input type="range" min="1" max="10" value="7" class="rating-slider" id="r-coach" style="--val:70%">
+        <div class="flex justify-between font-mono text-[9px] uppercase tracking-[.12em] text-dim mt-1.5"><span>Terrible</span><span>Perfect</span></div>
+      </div>
+      <div class="rating-card">
+        <div class="flex items-center justify-between mb-2">
+          <span class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light">Officiating</span>
+          <span class="font-display text-2xl rating-val" id="r-off-val">5</span>
+        </div>
+        <input type="range" min="1" max="10" value="5" class="rating-slider" id="r-off" style="--val:50%">
+        <div class="flex justify-between font-mono text-[9px] uppercase tracking-[.12em] text-dim mt-1.5"><span>Bought</span><span>Fair</span></div>
+      </div>
+      <div class="rating-card">
+        <div class="flex items-center justify-between mb-2">
+          <span class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light">Team Performance</span>
+          <span class="font-display text-2xl rating-val" id="r-team-val">6</span>
+        </div>
+        <input type="range" min="1" max="10" value="6" class="rating-slider" id="r-team" style="--val:60%">
+        <div class="flex justify-between font-mono text-[9px] uppercase tracking-[.12em] text-dim mt-1.5"><span>Worst</span><span>Best</span></div>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-5 flex items-center justify-between">
+      <div>
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-muted mb-1">Average fan verdict</div>
+        <div class="font-display text-5xl text-blue-light" id="avg">6.0</div>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="saveVerdict" class="bg-red-live text-white font-mono text-[11px] tracking-[.16em] uppercase px-5 py-3 shadow-card-red hover:translate-y-[-1px] transition-transform">Save Verdict</button>
+        <span class="font-mono text-[10px] tracking-[.12em] uppercase text-dim" id="saveStatus"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="my-8 grid grid-cols-[1fr_auto] gap-4 items-center bg-red px-6 py-5 shadow-card">
+  <div class="font-display text-2xl tracking-tight">Final · Mexico 1–0 USA · Group C standings: MEX 1st, USA 3rd</div>
+  <div class="font-mono text-[11px] tracking-[.16em] uppercase">Clawplay · Recap</div>
+</div>
+
+<footer class="border-t border-white/10 py-6 text-center font-mono text-[10px] uppercase tracking-[.16em] text-dim">
+  Powered by <a class="text-blue-light hover:underline" href="https://github.com/tylerdotai/clawplay">clawplay</a> · Premium digital sports magazine
+</footer>
+
+</div>
+
+<style>
+  .rating-slider {
+    -webkit-appearance: none; appearance: none;
+    width: 100%; height: 8px;
+    background: linear-gradient(to right, #dc2626 0%, #dc2626 var(--val), #1a1a1a var(--val), #1a1a1a 100%);
+    border: 1px solid rgba(255,255,255,.1);
+    outline: none;
+    cursor: pointer;
+  }
+  .rating-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 20px; height: 20px; border-radius: 0;
+    background: white; cursor: pointer;
+    box-shadow: 2px 2px 0 #1e40af;
+  }
+  .rating-slider::-moz-range-thumb {
+    width: 20px; height: 20px; border-radius: 0;
+    background: white; cursor: pointer; border: 2px solid #1e40af;
+  }
+</style>
+
+<script>
+// ░░░░ TABS ░░░░
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => {
+      b.classList.remove('tab-active');
+      b.classList.add('bg-raised', 'text-muted');
+    });
+    btn.classList.add('tab-active');
+    btn.classList.remove('bg-raised', 'text-muted');
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.add('hidden'));
+    document.getElementById('box-' + target).classList.remove('hidden');
+  });
+});
+
+// ░░░░ FAN VERDICT ░░░░
+const KEY = 'clawplay_verdict_usa_mex_2026_06_21';
+function readVerdict() {
+  try { return JSON.parse(localStorage.getItem(KEY) || 'null'); }
+  catch(e) { return null; }
+}
+function writeVerdict(v) {
+  localStorage.setItem(KEY, JSON.stringify(v));
+}
+function updateAvg() {
+  const c = +document.getElementById('r-coach').value;
+  const o = +document.getElementById('r-off').value;
+  const t = +document.getElementById('r-team').value;
+  document.getElementById('r-coach-val').textContent = c;
+  document.getElementById('r-off-val').textContent = o;
+  document.getElementById('r-team-val').textContent = t;
+  document.getElementById('avg').textContent = ((c+o+t)/3).toFixed(1);
+  document.getElementById('r-coach').style.setProperty('--val', (c*10) + '%');
+  document.getElementById('r-off').style.setProperty('--val', (o*10) + '%');
+  document.getElementById('r-team').style.setProperty('--val', (t*10) + '%');
+}
+['r-coach','r-off','r-team'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateAvg);
+});
+document.getElementById('saveVerdict').addEventListener('click', () => {
+  const v = {
+    coach: +document.getElementById('r-coach').value,
+    off:   +document.getElementById('r-off').value,
+    team:  +document.getElementById('r-team').value,
+    ts:    new Date().toISOString(),
+  };
+  writeVerdict(v);
+  const s = document.getElementById('saveStatus');
+  s.textContent = '✓ Saved locally';
+  setTimeout(() => s.textContent = '', 2500);
+});
+// Hydrate
+const saved = readVerdict();
+if (saved) {
+  document.getElementById('r-coach').value = saved.coach;
+  document.getElementById('r-off').value   = saved.off;
+  document.getElementById('r-team').value  = saved.team;
+}
+updateAvg();
+</script>
+</body>
+</html>

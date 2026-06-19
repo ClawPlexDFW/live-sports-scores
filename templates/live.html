@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIVE — Mexico 1–0 USA · 78' · World Cup</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      fontFamily: { display:['Georgia','serif'], body:['Karla','system-ui','sans-serif'], mono:['"JetBrains Mono"','Menlo','monospace'] },
+      colors: { void:'#0a0a0a', surface:'#131313', raised:'#1a1a1a',
+                blue:{ deep:'#1e40af', DEFAULT:'#2563eb', light:'#60a5fa' },
+                red:{ DEFAULT:'#dc2626', live:'#fb2c36' } },
+      boxShadow: { 'card':'5px 5px 0 #000', 'card-red':'5px 5px 0 #dc2626', 'card-blue':'5px 5px 0 #1e40af' },
+    }},
+  };
+</script>
+<style>
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(.8)} }
+  body { background: radial-gradient(circle at 88% 4%, rgba(37,99,235,.32), transparent 30%), radial-gradient(circle at 0% 100%, rgba(220,38,38,.22), transparent 28%), linear-gradient(135deg,#050505 0%,#0a0a0a 45%,#0d111b 100%); }
+  .live-pulse { animation: pulse 1.1s ease-in-out infinite; }
+  .wp-bar { transition: width 1.2s cubic-bezier(.16,.84,.44,1); }
+  .stat-bar { transition: width .8s ease; }
+  .pulse-strong { animation: pulse 1s ease-in-out infinite; }
+  .feed-item { animation: slidein .5s ease; }
+  @keyframes slidein { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes flash { 0%,100% { background: transparent; } 50% { background: rgba(251,44,54,.15); } }
+  .score-flash { animation: flash .6s ease; }
+</style>
+</head>
+<body class="font-body text-white min-h-screen">
+
+<!-- ░░ TOPLINE ░░ -->
+<div class="border-b border-white/10 px-6 py-3 flex justify-between items-center text-[10px] font-mono tracking-[.18em] uppercase">
+  <span class="text-muted">Clawplay · Live Tracker</span>
+  <span class="flex items-center gap-2 text-red-live"><span class="w-2 h-2 rounded-full bg-red-live live-pulse"></span>LIVE · 2ND HALF</span>
+  <span class="text-muted" id="ts">21:34:12 CT</span>
+</div>
+
+<header class="px-6 pt-10 pb-6 border-b border-white/10">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-blue-light font-mono text-[11px] tracking-[.16em] uppercase mb-2">FIFA World Cup 2026 · Group C · Matchday 02</div>
+    <h1 class="font-display text-5xl lg:text-6xl leading-[.9] tracking-tight">Mexico <em class="italic text-red">vs</em> USA</h1>
+  </div>
+</header>
+
+<div class="max-w-6xl mx-auto px-6 py-10 space-y-10">
+
+<!-- ░░ 1. MEGA-SCOREBOARD ░░ -->
+<section>
+  <div class="border border-white/10 bg-surface shadow-card-red p-8 lg:p-12">
+    <div class="grid lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-12 items-center">
+
+      <!-- AWAY -->
+      <div class="text-center lg:text-right">
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-2">Away · MEX</div>
+        <div class="font-display text-4xl lg:text-5xl mb-2">Mexico</div>
+        <div id="scoreAway" class="font-display text-7xl lg:text-9xl text-red-live score-flash leading-none">1</div>
+        <div class="font-mono text-[11px] uppercase tracking-[.12em] text-muted mt-3">Possession 42% · 9 shots · 4 on target</div>
+      </div>
+
+      <!-- CENTER -->
+      <div class="text-center px-6 border-x border-white/10">
+        <div class="flex items-center justify-center gap-3 mb-3">
+          <span class="w-2 h-2 rounded-full bg-red-live live-pulse"></span>
+          <span class="font-mono text-[11px] tracking-[.18em] uppercase text-red-live">LIVE</span>
+        </div>
+        <div id="clock" class="font-display text-5xl lg:text-6xl text-white leading-none">78'</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.16em] text-dim mt-3">2nd Half · 12 min left</div>
+        <div class="grid grid-cols-2 gap-3 mt-5 text-left">
+          <div class="border border-white/10 bg-raised p-2 text-center">
+            <div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Timeouts</div>
+            <div class="font-display text-base mt-1">2 / 3</div>
+          </div>
+          <div class="border border-white/10 bg-raised p-2 text-center">
+            <div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Fouls</div>
+            <div class="font-display text-base mt-1">11</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOME -->
+      <div class="text-center lg:text-left">
+        <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-2">Home · USA</div>
+        <div class="font-display text-4xl lg:text-5xl mb-2">USA</div>
+        <div id="scoreHome" class="font-display text-7xl lg:text-9xl text-white score-flash leading-none">0</div>
+        <div class="font-mono text-[11px] uppercase tracking-[.12em] text-muted mt-3">Possession 58% · 7 shots · 1 on target</div>
+      </div>
+    </div>
+
+    <!-- Possession arrow -->
+    <div class="mt-8 pt-6 border-t border-white/10">
+      <div class="flex items-center justify-between font-mono text-[10px] tracking-[.14em] uppercase mb-2">
+        <span class="text-red">● MEX 42%</span>
+        <span class="text-dim">Possession</span>
+        <span class="text-blue-light">USA 58% ●</span>
+      </div>
+      <div class="h-3 bg-raised border border-white/10 flex">
+        <div id="possBar" class="bg-red-live" style="width:42%"></div>
+        <div class="flex-1 bg-blue"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 2. LIVE WIN PROBABILITY ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">02</span>LIVE WIN PROBABILITY</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Model: xG + possession + shots · 5s refresh</span>
+  </div>
+
+  <div class="border border-white/10 bg-surface shadow-card p-6">
+    <div class="grid grid-cols-3 text-center mb-4">
+      <div>
+        <div class="font-display text-5xl text-red-live" id="wpAway">68%</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.16em] text-muted mt-1">MEX win</div>
+      </div>
+      <div>
+        <div class="font-display text-5xl text-white" id="wpDraw">19%</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.16em] text-muted mt-1">Draw</div>
+      </div>
+      <div>
+        <div class="font-display text-5xl text-blue-light" id="wpHome">13%</div>
+        <div class="font-mono text-[10px] uppercase tracking-[.16em] text-muted mt-1">USA win</div>
+      </div>
+    </div>
+
+    <div class="h-12 bg-raised border border-white/10 flex">
+      <div id="wpAwayBar" class="wp-bar bg-red-live" style="width:68%"></div>
+      <div id="wpDrawBar" class="wp-bar bg-white" style="width:19%"></div>
+      <div id="wpHomeBar" class="wp-bar bg-blue-light flex-1" style=""></div>
+    </div>
+
+    <!-- Win-prob timeline (sparkline via SVG) -->
+    <div class="mt-6 pt-6 border-t border-white/10">
+      <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted mb-2">Win prob timeline · MEX</div>
+      <svg id="wpChart" viewBox="0 0 600 80" class="w-full h-20" preserveAspectRatio="none">
+        <polyline id="wpLine" fill="none" stroke="#fb2c36" stroke-width="2" points=""></polyline>
+        <line x1="0" y1="40" x2="600" y2="40" stroke="rgba(255,255,255,.1)" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="flex justify-between font-mono text-[9px] uppercase tracking-[.12em] text-dim mt-1">
+        <span>Kickoff</span><span>30'</span><span>HT</span><span>60'</span><span>Now</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 3. NEXT-GEN LIVE STATS ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">03</span>LIVE TEAM STATS</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Auto-updating · 4s refresh</span>
+  </div>
+
+  <div class="border border-white/10 bg-surface shadow-card overflow-hidden">
+    <!-- Stat rows: name | MEX value | bar | USA value -->
+    <div class="divide-y divide-white/5">
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4" data-stat="shots">
+        <div class="text-right font-display text-2xl text-red-live" id="away-shots">9</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Shots</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" id="away-shots-bar" style="width:56%"></div><div class="flex-1 bg-blue stat-bar" id="home-shots-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-shots">7</div>
+      </div>
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4" data-stat="sot">
+        <div class="text-right font-display text-2xl text-red-live" id="away-sot">4</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Shots on Target</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" id="away-sot-bar" style="width:80%"></div><div class="flex-1 bg-blue stat-bar" id="home-sot-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-sot">1</div>
+      </div>
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4">
+        <div class="text-right font-display text-2xl text-red-live" id="away-corners">5</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Corners</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" style="width:71%"></div><div class="flex-1 bg-blue stat-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-corners">2</div>
+      </div>
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4">
+        <div class="text-right font-display text-2xl text-red-live" id="away-xg">1.84</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Expected Goals (xG)</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" id="away-xg-bar" style="width:78%"></div><div class="flex-1 bg-blue stat-bar" id="home-xg-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-xg">0.52</div>
+      </div>
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4">
+        <div class="text-right font-display text-2xl text-red-live" id="away-pass">412</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Passes Completed</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" id="away-pass-bar" style="width:42%"></div><div class="flex-1 bg-blue stat-bar" id="home-pass-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-pass">578</div>
+      </div>
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4">
+        <div class="text-right font-display text-2xl text-red-live" id="away-fouls">11</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Fouls</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" style="width:65%"></div><div class="flex-1 bg-blue stat-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-fouls">6</div>
+      </div>
+
+      <div class="stat-row grid grid-cols-[1fr_3fr_1fr] items-center px-6 py-3 gap-4">
+        <div class="text-right font-display text-2xl text-red-live" id="away-yellows">3</div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[.14em] text-muted text-center mb-1">Yellow Cards</div>
+          <div class="h-2 bg-raised flex"><div class="bg-red-live stat-bar" style="width:75%"></div><div class="flex-1 bg-blue stat-bar"></div></div>
+        </div>
+        <div class="font-display text-2xl text-blue-light" id="home-yellows">1</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 4. HOT PLAYER SPOTLIGHT ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">04</span>HOT PLAYER SPOTLIGHT</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim">Who's dominating right now</span>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-5">
+    <!-- MEX -->
+    <div class="border border-white/10 bg-surface p-6 shadow-card-red">
+      <div class="flex items-start gap-5">
+        <div class="w-20 h-20 border border-white/20 bg-raised grid place-items-center font-display text-3xl text-red">#22</div>
+        <div class="flex-1">
+          <div class="font-mono text-[10px] tracking-[.16em] uppercase text-red mb-1">MEX · RW · 78'</div>
+          <div class="font-display text-2xl">Hirving "Chucky" Lozano</div>
+          <div class="font-mono text-[10px] uppercase tracking-[.12em] text-muted mt-1">Match rating · <span class="text-red-live text-base">8.9</span></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-4 gap-3 mt-5 pt-5 border-t border-white/10">
+        <div class="text-center"><div class="font-display text-2xl text-white">1</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Goals</div></div>
+        <div class="text-center"><div class="font-display text-2xl text-white">1</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Assists</div></div>
+        <div class="text-center"><div class="font-display text-2xl text-white">3</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Key Passes</div></div>
+        <div class="text-center"><div class="font-display text-2xl text-white">5</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Dribbles</div></div>
+      </div>
+      <p class="text-sm text-muted mt-4 italic">"He just bullied Dest for 70 minutes. The goal was inevitable." — broadcast analyst, 78'</p>
+    </div>
+
+    <!-- USA -->
+    <div class="border border-white/10 bg-surface p-6 shadow-card-blue">
+      <div class="flex items-start gap-5">
+        <div class="w-20 h-20 border border-white/20 bg-raised grid place-items-center font-display text-3xl text-blue-light">#10</div>
+        <div class="flex-1">
+          <div class="font-mono text-[10px] tracking-[.16em] uppercase text-blue-light mb-1">USA · LW · 78'</div>
+          <div class="font-display text-2xl">Christian Pulisic</div>
+          <div class="font-mono text-[10px] uppercase tracking-[.12em] text-muted mt-1">Match rating · <span class="text-blue-light text-base">7.1</span></div>
+        </div>
+      </div>
+      <div class="grid grid-cols-4 gap-3 mt-5 pt-5 border-t border-white/10">
+        <div class="text-center"><div class="font-display text-2xl text-white">0</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Goals</div></div>
+        <div class="text-center"><div class="font-display text-2xl text-white">0</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Assists</div></div>
+        <div class="text-center"><div class="font-display text-2xl text-white">2</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Key Passes</div></div>
+        <div class="text-center"><div class="font-display text-2xl text-white">2</div><div class="font-mono text-[9px] uppercase tracking-[.12em] text-muted">Dribbles</div></div>
+      </div>
+      <p class="text-sm text-muted mt-4 italic">Working off scraps. Calf looks 80%. Hasn't beaten Sánchez 1v1 since the 30th minute.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ░░ 5. PLAY-BY-PLAY FEED ░░ -->
+<section>
+  <div class="flex items-baseline justify-between border-b border-white/10 pb-3 mb-6">
+    <h2 class="font-display text-3xl tracking-tight"><span class="font-mono text-sm text-blue-light mr-3">05</span>PLAY-BY-PLAY FEED</h2>
+    <span class="font-mono text-[10px] tracking-[.14em] uppercase text-dim flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-red-live live-pulse"></span>Live</span>
+  </div>
+
+  <div class="border border-white/10 bg-surface shadow-card overflow-hidden">
+    <div id="pbp" class="divide-y divide-white/5 max-h-[600px] overflow-y-auto"></div>
+  </div>
+</section>
+
+<div class="my-8 grid grid-cols-[1fr_auto] gap-4 items-center bg-red px-6 py-5 shadow-card">
+  <div class="font-display text-2xl tracking-tight">Live · 78' · MEX 1–0 USA · Final 12 min</div>
+  <div class="font-mono text-[11px] tracking-[.16em] uppercase">Clawplay · Tracker</div>
+</div>
+
+<footer class="border-t border-white/10 py-6 text-center font-mono text-[10px] uppercase tracking-[.16em] text-dim">
+  Powered by <a class="text-blue-light hover:underline" href="https://github.com/tylerdotai/clawplay">clawplay</a> · Mock live data · No API keys
+</footer>
+
+</div>
+
+<script>
+// ░░░░ STATE ░░░░
+const state = {
+  away: 1, home: 0,
+  minute: 78,
+  wp: { away: 68, draw: 19, home: 13 },
+  wpHistory: [22, 28, 35, 40, 45, 48, 52, 55, 60, 64, 66, 68],
+  stats: { shots:[9,7], sot:[4,1], corners:[5,2], xg:[1.84,0.52], pass:[412,578], fouls:[11,6], yellows:[3,1] },
+  pbp: [
+    { min: 78, side:'mex', tag:'GOAL', text:'LOZANO! 1–0. He receives from Vega at the edge of the box, shifts onto his left, and curls it past Turner. The SoFi crowd erupts.', class:'bg-red/10 border-l-4 border-red-live' },
+    { min: 76, side:'usa', tag:'CHANCE', text:'Pulisic drives into the box, cuts back onto his right — Ochoa saves low to his left.', class:'border-l-4 border-blue' },
+    { min: 73, side:'mex', tag:'SUB', text:'MEX · Antuna ON for César Huerta. Fresh legs on the right.', class:'border-l-4 border-white/30' },
+    { min: 70, side:'usa', tag:'YELLOW', text:'Robinson booked for a late challenge on Vega. He\'ll miss the next match.', class:'border-l-4 border-blue' },
+    { min: 67, side:'usa', tag:'CHANCE', text:'Reyna curls a 25-yard free kick just wide. Ochoa had it covered but it was close.', class:'border-l-4 border-blue' },
+    { min: 64, side:'mex', tag:'SHOT', text:'Lozano cuts inside, fires low — Turner parries. Corner.', class:'border-l-4 border-white/30' },
+    { min: 60, side:'usa', tag:'SUB', text:'USA · Aaronson ON for Musah. Tactical change to push the tempo.', class:'border-l-4 border-blue' },
+    { min: 57, side:'mex', tag:'SHOT', text:'Header from a corner, tipped over the bar by Turner. Heartbeat moment for the US.', class:'border-l-4 border-white/30' },
+    { min: 52, side:'usa', tag:'SHOT', text:'Pulisic drags one wide from inside the box. Should have hit the target.', class:'border-l-4 border-blue' },
+    { min: 49, side:'mex', tag:'SHOT', text:'Vega from distance, swerving shot, parried by Turner. Strong hands.', class:'border-l-4 border-white/30' },
+    { min: 46, side:'mex', tag:'KICKOFF', text:'Second half underway. Mexico to start.', class:'border-l-4 border-white/30' },
+    { min: 45, side:'usa', tag:'HT', text:'HALFTIME — USA 0 · MEX 0. A cagey first half. USA the better side in possession, Mexico more dangerous on the break.', class:'bg-blue/10 border-l-4 border-blue-light' },
+  ],
+};
+
+function fmt(n) { return typeof n === 'number' ? n.toString() : n; }
+
+// ░░░░ TIMESTAMP ░░░░
+function updateTs(){
+  const d = new Date();
+  const h = d.getHours().toString().padStart(2,'0');
+  const m = d.getMinutes().toString().padStart(2,'0');
+  const s = d.getSeconds().toString().padStart(2,'0');
+  document.getElementById('ts').textContent = `${h}:${m}:${s} CT`;
+}
+setInterval(updateTs, 1000); updateTs();
+
+// ░░░░ WIN PROBABILITY ░░░░
+function renderWp(){
+  const { away, draw, home } = state.wp;
+  document.getElementById('wpAway').textContent = away + '%';
+  document.getElementById('wpDraw').textContent = draw + '%';
+  document.getElementById('wpHome').textContent = home + '%';
+  document.getElementById('wpAwayBar').style.width = away + '%';
+  document.getElementById('wpDrawBar').style.width = draw + '%';
+  document.getElementById('wpHomeBar').style.width = home + '%';
+
+  // Render sparkline
+  const line = document.getElementById('wpLine');
+  const pts = state.wpHistory.map((v, i) => {
+    const x = (i / (state.wpHistory.length - 1)) * 600;
+    const y = 80 - ((v / 100) * 70 + 5);
+    return `${x.toFixed(1)},${y.toFixed(1)}`;
+  });
+  line.setAttribute('points', pts.join(' '));
+}
+
+// ░░░░ SCOREBOARD ░░░░
+function renderScore(){
+  document.getElementById('scoreAway').textContent = state.away;
+  document.getElementById('scoreHome').textContent = state.home;
+  document.getElementById('clock').textContent = state.minute + "'";
+}
+
+// ░░░░ STATS ░░░░
+function renderStats(){
+  const keys = ['shots','sot','corners','xg','pass','fouls','yellows'];
+  keys.forEach(k => {
+    const [a, h] = state.stats[k];
+    const elA = document.getElementById('away-' + k);
+    const elH = document.getElementById('home-' + k);
+    if (elA) elA.textContent = k === 'xg' ? a.toFixed(2) : a;
+    if (elH) elH.textContent = k === 'xg' ? h.toFixed(2) : h;
+    const barA = document.getElementById('away-' + k + '-bar');
+    const barH = document.getElementById('home-' + k + '-bar');
+    if (barA && barH) {
+      const total = a + h;
+      if (total > 0) {
+        barA.style.width = Math.round((a / total) * 100) + '%';
+      }
+    }
+  });
+}
+
+// ░░░░ PLAY-BY-PLAY ░░░░
+function tagColor(tag) {
+  const map = {
+    GOAL: 'bg-red-live text-white',
+    CHANCE: 'bg-blue text-white',
+    SHOT: 'bg-white/20 text-white',
+    YELLOW: 'bg-yellow-500/30 text-yellow-300 border border-yellow-500/40',
+    SUB: 'bg-white/10 text-muted',
+    KICKOFF: 'bg-blue-deep text-white',
+    HT: 'bg-blue-deep text-white',
+    SAVE: 'bg-white/20 text-white',
+    FOUL: 'bg-white/10 text-muted',
+  };
+  return map[tag] || 'bg-white/10 text-muted';
+}
+function renderPbp(){
+  const root = document.getElementById('pbp');
+  root.innerHTML = state.pbp.map(p => `
+    <div class="feed-item px-6 py-3 ${p.class || ''} flex items-start gap-4">
+      <div class="font-mono text-2xl font-bold text-blue-light w-14 text-right shrink-0">${p.min}'</div>
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center gap-2 mb-1">
+          <span class="font-mono text-[10px] tracking-[.14em] uppercase px-2 py-0.5 ${tagColor(p.tag)}">${p.tag}</span>
+          <span class="font-mono text-[10px] uppercase tracking-[.12em] text-dim">${p.side.toUpperCase()}</span>
+        </div>
+        <p class="text-sm leading-relaxed text-muted">${p.text}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ░░░░ LIVE UPDATES ░░░░
+let tickCount = 0;
+function liveTick(){
+  tickCount++;
+
+  // Win probability shifts slightly
+  const drift = () => Math.round((Math.random() - 0.5) * 3);
+  state.wp.away = Math.max(5, Math.min(95, state.wp.away + drift()));
+  state.wp.home = Math.max(5, Math.min(95, state.wp.home + Math.round((Math.random() - 0.5) * 2)));
+  state.wp.draw = Math.max(2, 100 - state.wp.away - state.wp.home);
+  state.wpHistory.push(state.wp.away);
+  if (state.wpHistory.length > 24) state.wpHistory.shift();
+  renderWp();
+
+  // Time progresses
+  if (tickCount % 2 === 0 && state.minute < 90) {
+    state.minute += 1;
+    renderScore();
+  }
+
+  // Stats nudge every few ticks
+  if (tickCount % 3 === 0) {
+    if (Math.random() < 0.3) state.stats.shots[0] += 1;
+    if (Math.random() < 0.2) state.stats.shots[1] += 1;
+    state.stats.xg[0] += Math.random() * 0.05;
+    state.stats.pass[0] += Math.floor(Math.random() * 6);
+    state.stats.pass[1] += Math.floor(Math.random() * 8);
+    renderStats();
+  }
+
+  // Occasional new play-by-play
+  if (tickCount % 6 === 5 && state.minute < 90) {
+    const newPlays = [
+      { tag:'SHOT', text:'Midfield possession ping-pong. Neither side committing.' },
+      { tag:'FOUL', text:'Tactical foul to break up a counter. Free kick in a dangerous spot.' },
+      { tag:'SAVE', text:'Long-range effort, comfortable save for the keeper.' },
+      { tag:'CHANCE', text:'Through ball, just barely intercepted. Heart-in-mouth moment.' },
+    ];
+    const p = newPlays[Math.floor(Math.random() * newPlays.length)];
+    p.min = state.minute;
+    p.side = Math.random() < 0.5 ? 'mex' : 'usa';
+    p.class = p.side === 'mex' ? 'border-l-4 border-white/30' : 'border-l-4 border-blue';
+    state.pbp.unshift(p);
+    if (state.pbp.length > 14) state.pbp.pop();
+    renderPbp();
+  }
+}
+
+renderWp(); renderScore(); renderStats(); renderPbp();
+setInterval(liveTick, 4500);
+</script>
+</body>
+</html>
