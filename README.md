@@ -178,6 +178,10 @@ write_match_report(match, 'usa_mexico.html')
     <p><img src="examples/hub.png" alt="Franchise hub — standings, rumor mill, fantasy, countdown" />
     <em>Franchise hub — NFC East standings, trade &amp; rumor mill (verified / developing / speculation), fantasy + lookahead betting lines, social buzz feed, prominent countdown.</em></p>
     <hr />
+    <h2>Per-sport design specs</h2>
+    <p>Each of the 22 sports has its own <code>design.md</code> spec — color palette, typography, section order, mock-data schema, vocabulary, visual motifs, tone. They don't share a colorway. The shared editorial standard lives in <a href="templates/MASTER_PROMPT.md"><code>templates/MASTER_PROMPT.md</code></a>; the per-sport overrides live under <a href="templates/designs/"><code>templates/designs/</code></a>.</p>
+    <p>Available specs: <a href="templates/designs/nfl.md">NFL</a> · <a href="templates/designs/nba.md">NBA</a> · <a href="templates/designs/nhl.md">NHL</a> · <a href="templates/designs/mlb.md">MLB</a> · <a href="templates/designs/mls.md">MLS</a> · <a href="templates/designs/wnba.md">WNBA</a> · <a href="templates/designs/cfb.md">CFB</a> · <a href="templates/designs/cbb.md">CBB</a> · <a href="templates/designs/cbb_w.md">CBB_W</a> · <a href="templates/designs/epl.md">EPL</a> · <a href="templates/designs/ucl.md">UCL</a> · <a href="templates/designs/laliga.md">La Liga</a> · <a href="templates/designs/bundes.md">Bundesliga</a> · <a href="templates/designs/seriea.md">Serie A</a> · <a href="templates/designs/worldcup.md">World Cup</a> · <a href="templates/designs/soccer_live.md">Soccer Live</a> · <a href="templates/designs/ufc.md">UFC</a> · <a href="templates/designs/tennis.md">Tennis</a> · <a href="templates/designs/golf.md">Golf</a> · <a href="templates/designs/cricket.md">Cricket</a> · <a href="templates/designs/rugby.md">Rugby</a></p>
+    <hr />
     <h2>Roadmap</h2>
     <ul>
       <li><input checked="" disabled="" type="checkbox" /> Multi-source aggregator (Goal.com + ESPN + BBC + FMHY + Wikipedia)</li>
@@ -186,6 +190,8 @@ write_match_report(match, 'usa_mexico.html')
       <li><input checked="" disabled="" type="checkbox" /> CST/DFW timezone formatting throughout</li>
       <li><input checked="" disabled="" type="checkbox" /> pytest TDD · ruff lint · GitHub Actions CI</li>
       <li><input checked="" disabled="" type="checkbox" /> MIT license, public on GitHub</li>
+      <li><input checked="" disabled="" type="checkbox" /> <code>templates/MASTER_PROMPT.md</code> — shared editorial standard</li>
+      <li><input checked="" disabled="" type="checkbox" /> <code>templates/designs/*.md</code> — per-sport design specs (22 sports)</li>
       <li><input disabled="" type="checkbox" /> Live data wired into all 4 HTML templates (currently mock)</li>
       <li><input disabled="" type="checkbox" /> Configurable team colors (currently ClawPlex palette)</li>
       <li><input disabled="" type="checkbox" /> Tailwind build pipeline (currently CDN)</li>
